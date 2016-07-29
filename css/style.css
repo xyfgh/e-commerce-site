@@ -1,0 +1,764 @@
+@charset"utf8";
+
+/*初始化*/
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,input,select,textarea,form,hr{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font:14px/1.5 "Microsoft Yahei","微软雅黑";
+}
+img,hr{
+	border:none;
+}
+ul,ol{
+	list-style:none;
+}
+input,select,textarea{
+	outline:none;
+	border:none;
+	background:none;/*解决IE6兼容问题*/
+}
+textarea{
+	resize:none;
+}
+a{
+	text-decoration:none;
+	color:#656565
+}
+/*清除浮动*/
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}
+/*清除浮动结束*/
+/*初始化结束*/
+
+/*公用*/
+.comWidth{
+	width: 1000px;
+	margin: 0 auto;
+}
+.leftArea{
+	float: left;
+}
+.rightArea{
+	float: right;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+/*公用部分结束*/
+
+/*顶端条*/
+.topBar{
+	background-color: #F7F7F7;
+	height: 31px;
+	line-height: 31px;
+	border-bottom: 1px solid #DDD;
+}
+
+.topBar p{
+	display: inline-block;
+	/*为了不与后面的a标签换行*/
+	margin-right: 10px;
+}
+
+.topBar a:hover{
+	color: blue;
+}
+
+.collection{
+	background: url(../icon/collection.png) left center no-repeat;
+	padding-left: 20px;
+	font-weight: bold;
+}
+/*logo、搜索、购物车*/
+.logoBar{
+	height: 85px;
+	background-color: #1d7ad9;
+	color: #FFF;
+}
+
+.logo{
+	padding-top: 10px;
+	padding-left: 40px;
+	float: left;
+}
+
+.searchBox{
+	float: left;
+	margin-left: 185px;
+	margin-top: 23px;
+}
+
+.searchText{
+	width: 350px;
+	height: 35px;
+	line-height: 35px\9;/*“\9”代表所有IE浏览器，此处可解决IE6兼容性问题*/
+	background-color: #FFF;
+	padding: 0 5px;
+}
+
+.searchBtn{
+	width: 69px;
+	height: 35px;
+	background-color: #ff8c00;
+	float: right;
+	color: #FFF;
+	font:14px "Microsoft Yahei","微软雅黑";
+	cursor: pointer;
+
+}
+
+.shopCar{
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	margin-top: 23px;
+	margin-left: 31px;
+}
+
+.shopCarText{
+	float: inherit;
+	width: 46px;
+	height: inherit;
+	color: #FFF;
+	background: #ff8c00 url(../icon/shopcar.png) 10px center no-repeat;
+	border-right: 1px solid #e27a00;
+	padding-left: 40px;
+}
+
+.shopCarNum{
+	float: inherit;
+	width: 26px;
+	height: inherit;
+	border-left: 1px solid #ff9c01;
+	background: #ff8c00 url(../icon/shopnum.png) 33px center no-repeat;
+	padding-right: 30px;
+	text-align: right;
+	/*右对齐，数位增多时，不至于往右遮挡图标*/
+}
+/*导航栏*/
+.navBox{
+	height: 35px;
+	background-color: #1369c0;
+	color: #FFF;
+}
+.shopClass{
+	width: 190px;
+	float: left;
+	position: relative;
+}
+.allShop{
+	display: block;
+	width: 190px;
+	height: 35px;
+	text-align: center;
+}
+.allShop p{
+	display: inline-block;
+	line-height: 35px;
+	font-weight:bold;
+	font-size:16px;
+	color: #FFF;
+	text-align: center;
+	/*background: url(../icon/shopclass.png) 148px center no-repeat;*/
+}
+.allShop span{
+	background:url(../icon/shopclass.png) left center no-repeat; 
+	margin-left: 3px;
+	display: inline-block;
+	width: 11px;
+	height: 7px;
+}
+.nav li{
+	float: left;
+	/*nav可不浮动*/
+}
+.nav a{
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align:center;
+	color: #FFF;
+}
+.nav a:hover{
+	background-color: #4593fd;
+}
+.nav .active{
+	background-color: #4593fd;
+}
+/*商品列表*/
+.shopClassList{
+	/*width: 190px;*/
+	background-color: #4593fd;
+	position: absolute;
+	left: 0;
+	/*top: 35px;*/
+	width: inherit;
+}
+.shopClassItem{
+	height: 43px;
+	border-top: 1px solid #5aa1fe;
+	border-left: 1px solid #4593fd;
+	border-bottom: 1px solid #3487f2;
+	padding: 10px;
+	background: url(../icon/shopclassitemarrow.png) 172px 20px no-repeat;
+}
+/*.shopClassItem:hover{
+	background: #FFF;
+	color: #CCC;
+}*/
+.shopClassItem a{
+	color: #FFF;
+}
+.shopClassItem a:hover{
+	text-decoration: underline;
+}
+.shopClassItem dt{
+	height: 24px;
+}
+.shopClassItem dd{
+	font: 12px "宋体";
+}
+.shopClassItemAink{
+	width: 48px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	display: inline-block;
+	text-decoration: underline;
+	background: url(../icon/shopclassitemAlink.png) left center no-repeat;
+}
+
+/*选中商品分类列表项时*/
+.shopClassItem_active{
+	background-color: #FFF;
+	background-image: none;
+}
+.shopClassItem_active a{
+	color: #000;
+}
+.shopClassItem_active .shopClassItemAink{
+	
+}
+/*弹出的菜单*/
+.shopClassListPop{
+	width: 568px;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	position: absolute;
+	left: 190px;
+	top: 35px;
+	font:12px "宋体";
+	z-index: 9;
+}
+.shopClassListPopItem{
+	margin:10px 20px 0 20px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #e5e5e5;
+	/*因为border-bottom没有横贯父元素，所以需要结合margin与pading共同设置*/
+}
+.shopClassListPopItem dt{
+	width: 86px;
+	height: 24px;
+	line-height: 24px;
+}
+.shopClassListPopItem dt a{
+	color: #4b88da;
+	font-weight: bold;
+}
+.shopClassListPopItem dd{
+	width: 460px;
+	margin-left: 68px;
+	margin-top: -24px;
+	line-height: 24px;
+}
+.shopClassListPopItem a{
+	margin-right: 12px;
+	height: 24px;
+	line-height: 24px;
+	white-space:nowrap;
+	/*超长时不截断*/
+}
+.shopClassListPopItem a:hover{
+	color:#ff7300; 
+}
+.shopClassListPopBtnWrap{
+	padding: 15px 20px;
+}
+.shopClassListPopBtn{
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	color: #FFF;
+	text-align: left;
+	padding: 0 26px 0 8px;
+	margin-right: 2px;
+	background: url(../icon/shopclassitemarrow.png) 90% center no-repeat #2785e6;
+}
+
+/*banner*/
+.banner{
+	/*overflow:hidden;*/
+}
+.bannerBox{
+	float: right;
+	width: 810px;
+	height: 325px;
+	overflow: hidden;
+	position: relative;
+}
+.imgBox{
+	width: 5000px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*定位用于运动时*/
+}
+.imgBox li{
+	float: left;
+}
+.imgBox img{
+	width: 810px;
+	height: 325px;
+	display: block;
+}
+.imgNum{
+	width: inherit;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	text-align: center;
+}
+.imgNum a{
+	display: inline-block;
+	width: 20px;
+	height: 5px;
+	background: #FFF;
+	margin: 0 2.5px; 
+}
+.imgNum .active{
+	background-color: #ff7700;
+}
+
+/*网页中部商品栏*/
+.shopWrap{
+	
+}
+.shopTitle{
+	display: block;
+	height: 45px;
+	line-height: 45px;
+	margin: 15px auto;
+	color: #000;
+}
+.shopTitle img{
+	float: left;
+}
+.shopTitle h2{
+	float: left;
+	margin-left: 15px;
+}
+.shopTitle span{
+	float: right;
+	font-size: 12px;
+	line-height: 12px;
+	margin-top: 33px;
+	/*vertical-align: baseline;*/
+}
+.shopAd{
+	width: 190px;
+	float: left;
+}
+.shopAd img{
+	display: block;
+	/*img为inline-block元素，后带有空白，改为block后不带空白*/
+}
+.shopBox{
+	float: right;
+	width: 810px;
+	height: 397px;
+	border-bottom: 3px solid #ff7201;
+	overflow: hidden;
+}
+.shopItemUp{
+	width: 161px;
+	height: 208px;
+	float: right;
+	border: 1px solid #DDD;
+	border-left: none;
+	text-align: center;
+	padding: 20px;
+}
+.shopItemUp img{
+	height: 150px;
+	width: 130px;
+}
+.shopItemUp h3{
+	margin-top: 20px;
+	/*text-align: center;*/
+}
+.shopItemUp span{
+	color: #ff7201;
+	/*text-align: center;*/
+}
+.shopItemDown{
+	width: 181px;
+	height: 127px;
+	float: right;
+	border-right: 1px solid #DDD;
+	padding: 10px;
+}
+.shopItemDown img{
+	max-height: 60px;
+	width: 80px;
+	margin-top: 25px;
+	float: left;
+}
+.shopItemDown p{
+	float: right;
+	width: 90px;
+	height: 40px;
+	line-height: 20px;
+	font-size: 12px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.shopItemDown span{
+	float: left;
+	text-indent: 10px;
+	color: #ff7201;
+}
+
+.foot{
+	background: #d4d4d4;
+	height: 225px;
+	width: inherit;
+	clear: both;
+	margin-top: 20px;
+}
+.footWrap{
+	width: inherit;
+	text-align: center;
+	font-size: 12px;
+	line-height: 24px;
+	/*margin-top: 55px;外边框会合并所以使用padding*/
+	padding-top: 50px;
+}
+.footLink{
+	
+}
+.footLink li{
+	display: inline-block;
+}
+.footLink a{
+	display: inline-block;
+	color: #000;
+}
+.footLink a:hover{
+	color: #ff7201;
+}
+.footLink span{
+	display: inline-block;
+	border-left: 1px solid #000;
+	margin-left: 6px;
+	height: 12px;
+	line-height: 12px;
+}
+.footImg img{
+	margin: 30px 10px;
+}
+
+/*产品分类页*/
+.productMain{
+	margin-top: 15px
+}
+/*左侧的产品导航*/
+.leftNav{
+	background-color: #f3f3f3;
+	color: #555555;
+	width: 183px;
+	border: 1px solid #d7d7d7;
+	/*float: left;*/
+}
+.leftNav h3{
+	text-align: center;
+	font-size: 14px;
+	height: 34px;
+	line-height: 34px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.leftNavItem{
+	text-indent: 20px;
+	font-size: 12px;
+	line-height: 25px;
+	border-bottom: 1px dotted #d7d7d7;
+	margin-bottom: -1px;
+	padding: 5px 0;
+}
+.leftNavList{
+	overflow: hidden;
+	/*清除浮动的方法之一；也可使用clearfix类*/
+}
+.leftArea h4{
+	height: inherit;
+}
+.leftArea li{
+	float: left;
+	width: 91px;
+	height: 25px;
+}
+.leftArea a:hover{
+	color: #ff7201;
+}
+/*右侧的产品列表*/
+.productWrap{
+	width: 810px;
+}
+.productTitle{
+	border-bottom: 2px solid #cccccc;
+	height: 40px;
+	line-height: 40px;
+	color: #444;
+	text-indent: 10px;
+	margin-top: 5px;
+}
+.productTitle h3{
+	border-bottom: 2px solid #096dba;
+	width: 180px;
+}
+
+.productBoxItem{
+	width: 160px;
+	height: 260px;
+	padding: 20px;
+	font-size: 12px;
+	float: left;
+}
+.productImg{
+	width: 160px;
+	height: 160px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.productText p{
+	margin-bottom:20px;
+}
+.productText span{
+	color: #d4109d;
+	font-size: 14px;
+	font-weight: bold;
+}
+/*评论*/
+.commet{
+	line-height: 16px;
+}
+.commet p{
+	float: left;
+	height: 16px;
+	line-height: 16px;
+}
+.commet img{
+	float: left;
+}
+.commet a{
+	color: #085c9b;
+	text-decoration: underline;
+}
+/*评论里的星星*/
+.commetstar{
+	background: url(../icon/commetstar.png) 0 2px repeat-x;
+	height: 13px;
+	width: 65px;
+	float: left;
+}
+/*不同数量的星星的类*/
+.star5{
+	width: 65px;
+}
+.star4{
+	width: 52px;
+}
+.star3{
+	width: 39px;
+}
+.star2{
+	width: 26px;
+}
+.star1{
+	width: 13px;
+}
+.star0{
+	width: 0;
+}
+
+/*登录页*/
+/*logo部分*/
+.loginSignupTop{
+	height: 85px;
+	background-color: #1d7ad9;
+}
+
+.loginSignupLogo{
+	width: 460px;
+	height: 85px;
+	margin: 0 auto;
+}
+.loginSignupLogo img{
+	float: left;
+	margin: 10px 0;
+}
+.loginSignupLogo h1{
+	color: #FFF;
+	float: left;
+	height: 85px;
+	line-height: 85px;
+	font-weight: normal;
+	margin-left: 15px;
+	font-size: 22px;
+}
+.loginWrap{
+	width: 460px;
+	margin: 0 auto;
+	font-family: "宋体";
+}
+.loginSignupContent{
+	border: 1px solid #e8e8e8;
+	padding: 40px 74px 20px;
+	margin-top: 10px;
+	color: #999999;
+	font-size: 12px;
+	/*height: 20px;*/
+	line-height: 20px;
+}
+.loginSignupContent{
+	width: 310px;
+}
+.inputText{
+	width: 268px;
+	height: 32px;
+	border: 1px solid #cccccc;
+	padding: 0 30px 0 10px;
+	margin-bottom: 10px;
+}
+
+.userId{
+	background: url(../icon/userid.png) 280px center no-repeat;
+}
+.userPw{
+	background: url(../icon/userpw.png) 280px center no-repeat;
+}
+.loginSignupCheck{
+	height: 13px;
+	width: 13px;
+	vertical-align: bottom;
+	margin: 15px 0 30px;
+}
+.loginSignupForm label{
+	vertical-align: baseline;
+	display: inline-block;
+	margin: 15px 10px 30px 2px;
+	color: #000;
+	font-size: 12px;
+	line-height: 13px;
+}
+.loginSignupForm a{
+	color: #000;
+}
+.loginSignupSubmit{
+	display: block;
+	height: 35px;
+	width: 310px;
+	border: 1px solid #d0e4f9;
+	background: -webkit-linear-gradient(top, #fafafa, #d3d3d3); /* Safari chrome*/
+	background: -o-linear-gradient(top, #fafafa, #d3d3d3); /* Opera*/
+	background: -moz-linear-gradient(top, #fafafa, #d3d3d3); /* Firefox*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#fafafa',endColorStr='#d3d3d3',gradientType='0'); /*IE*/
+	background: linear-gradient(top, #fafafa, #d3d3d3); /* 标准语法 */
+	color: #606060;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0 auto;
+}
+/*更多帐户登录*/
+.moreId {
+	line-height: 22px;
+	margin-top: 35px;
+}
+.moreId li{
+	float: left;
+	height: 22px;
+	line-height: 22px;
+}
+.moreId a{
+	float: left;
+	font-size: 12px;
+}
+.moreId hr{
+	height: 12px;
+	width: 1px;
+	background-color: #dbdbdb;
+	margin:5px 3px;
+	float: right;
+}
+/*登录框右下角的“注册”链接*/
+.loginSignupLink{
+	float: right;
+	padding: 0 20px;
+	height: 31px;
+	background-color: #7cbe56;
+	margin-right: 40px;
+	-moz-border-radius: 0 0 3px 3px;      /* Gecko browsers */
+    -webkit-border-radius: 0 0 3px 3px;   /* Webkit browsers */
+    border-radius:0 0 3px 3px;            /* W3C syntax */
+    /*圆角*/
+}
+.loginSignupLink p{
+	color: #FFF;
+	font: 12px "宋体";
+	height: 31px;
+	line-height: 31px;
+	text-align: center;
+}
+/*注册页*/
+.signupWrap{
+	width: 635px;
+	margin: 0 auto;
+	font-family: "宋体";
+}
+.signupContent{
+	width: 485px;
+}
+.signupInfo{
+	width: 420px;
+	text-align: right;
+}
+.signupInfo input{
+	margin-left: 10px;
+}
+.signupInfo li{
+	height: 44px;
+	margin-bottom: 30px;
+}
+.signupInfo span{
+	color: #F00;
+	margin-right: 5px;
+}
+.signupForm label{
+	margin-right: -2px;
+}
+.signupCheck{
+	margin-left: 88px;
+}
